@@ -1,0 +1,14 @@
+{"_id":{"$oid":"6032e2ff208e6bb543714fea"},"strCategory":"Beef"}
+{"_id":{"$oid":"6032e2ff208e6bb543714feb"},"strCategory":"Breakfast"}
+{"_id":{"$oid":"6032e2ff208e6bb543714fec"},"strCategory":"Chicken"}
+{"_id":{"$oid":"6032e2ff208e6bb543714fed"},"strCategory":"Dessert"}
+{"_id":{"$oid":"6032e2ff208e6bb543714fee"},"strCategory":"Goat"}
+{"_id":{"$oid":"6032e2ff208e6bb543714fef"},"strCategory":"Lamb"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff0"},"strCategory":"Miscellaneous"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff1"},"strCategory":"Pasta"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff2"},"strCategory":"Pork"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff3"},"strCategory":"Seafood"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff4"},"strCategory":"Side"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff5"},"strCategory":"Starter"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff6"},"strCategory":"Vegan"}
+{"_id":{"$oid":"6032e2ff208e6bb543714ff7"},"strCategory":"Vegetarian"}
