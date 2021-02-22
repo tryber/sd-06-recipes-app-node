@@ -1,12 +1,12 @@
 const { Router } = require('express');
-const mongo = require('../models/mongo');
+const Recipe = require('../models/Recipe');
 
 const router = new Router();
 
 const validateFields = require('../middlewares/validateFields');
 
 router.get('/', async (_req, res) => {
-  const recipes = await mongo.getAll();
+  const recipes = await Recipe.getAll();
 
   res.status(200).send(recipes);
 });
@@ -14,7 +14,7 @@ router.get('/', async (_req, res) => {
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const recipe = await mongo.findById(id);
+    const recipe = await Recipe.findById(id);
     res.status(200).send(recipe);
   } catch(e) {
     res.status(404).send({ message: 'Receita não encontrada' });
@@ -24,10 +24,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', validateFields, async (req, res) => {
   const { body } = req;
   try {
-    const newId = await mongo.create(body);
-    return res.status(200).send(newId);
+    const newId = await Recipe.create(body);
+    return res.status(200).send({ id: newId, ...body });
   } catch(e) {
-    res.status(404).send({ message: 'Receita não encontrada' });
+    res.status(404).send(e);
   }
 });
 
@@ -35,7 +35,7 @@ router.put('/:id', validateFields, async (req, res) => {
   const { body } = req;
   const { id } = req.params;
   try {
-    await mongo.update(id, body);
+    await Recipe.update(id, body);
     return res.status(200).send({ message: 'Receita atualizada!' });
   } catch(e) {
     return res.status(404).send({ message: 'Receita não encontrada' });
