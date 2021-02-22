@@ -4,6 +4,18 @@ const rescue = require('express-rescue');
 
 const router = Router();
 
+router.get('/recipes/search', rescue (async(req, res) => {
+  const { cat, area, q } = req.query;
+  const data = await RecipesService.getAll();
+  const recipeByCat = data.filter((recipe) => recipe.strCategory.includes(cat));
+  const recipeByArea = data.filter((recipe) => recipe.strArea.includes(area));
+  const recipeByQ = data.filter((recipe) => recipe.strMeal.includes(q));
+
+  if (recipeByCat) return res.status(200).json(recipeByCat);
+  if (recipeByArea) return res.status(200).json(recipeByArea);
+  if (recipeByQ) return res.status(200).json(recipeByQ);
+}));
+
 router.get('/recipes', rescue (async(req, res) => {
   const recipes = await RecipesService.getAll();
   res.status(200).json(recipes);
