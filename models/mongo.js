@@ -31,8 +31,18 @@ const create = async (recipe) => {
   }
 };
 
+const update = async (id, recipe) => {
+  try {
+    return await connection()
+      .then((db) => db.collection('recipes').updateOne({ "_id": ObjectId(id) }, { $set: recipe }));
+  } catch(e) {
+    throw new Error(e);
+  }
+};
+
 module.exports = {
   getAll,
   findById,
-  create
+  create,
+  update
 };

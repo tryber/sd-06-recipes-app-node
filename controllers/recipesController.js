@@ -31,4 +31,15 @@ router.post('/', validateFields, async (req, res) => {
   }
 });
 
+router.put('/:id', validateFields, async (req, res) => {
+  const { body } = req;
+  const { id } = req.params;
+  try {
+    await mongo.update(id, body);
+    return res.status(200).send({ message: 'Receita atualizada!' });
+  } catch(e) {
+    return res.status(404).send({ message: 'Receita não encontrada' });
+  }
+});
+
 module.exports = router;
