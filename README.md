@@ -70,7 +70,7 @@ Caso não exista nenhuma receita cadastrada o endpoint deve retornar um array va
 
 ```js
 {
-  "strName": "Spicy Arrabiata Penne",
+  "strMeal": "Spicy Arrabiata Penne",
   "strCategory": "Vegetarian",
   "strArea": "Italian",
   "strInstructions": "Bring a large pot of water to a boil. Add kosher salt to the boilingwater, then add the pasta. Cook according to the package instructions, about 9 minutes\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oilstarts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Addthe chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste.Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes andmore basil and serve warm.",
@@ -80,18 +80,18 @@ Caso não exista nenhuma receita cadastrada o endpoint deve retornar um array va
 
 Faça as seguintes validações:
 
-* `strName` deve estar preenchido e deve ter no mínimo 3 caracteres.
+* `strMeal` deve estar preenchido e deve ter no mínimo 3 caracteres.
   * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
   ```js
   {
-    "message": "O campo \"strName\" é obrigatório"
+    "message": "O campo \"strMeal\" é obrigatório"
   }
   ```
 
   * Caso o campo não tenha pelo menos 3 caracteres retorne um código de status 400, com o seguinte corpo:
   ```js
   {
-    "message": "O campo \"strName\" deve ter pelo menos 3 caracteres"
+    "message": "O campo \"strMeal\" deve ter pelo menos 3 caracteres"
   }
   ```
 
@@ -165,7 +165,7 @@ Faça as seguintes validações:
 
 ```js
 {
-  "strName": "Spicy Arrabiata Penne",
+  "strMeal": "Spicy Arrabiata Penne",
   "strCategory": "Vegetarian",
   "strArea": "Italian",
   "strInstructions": "Bring a large pot of water to a boil. Add kosher salt to the boilingwater, then add the pasta. Cook according to the package instructions, about 9 minutes\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oilstarts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Addthe chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste.Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes andmore basil and serve warm.",
@@ -175,18 +175,18 @@ Faça as seguintes validações:
 
 Faça as seguintes validações:
 
-* `strName` deve estar preenchido e deve ter no mínimo 3 caracteres.
+* `strMeal` deve estar preenchido e deve ter no mínimo 3 caracteres.
   * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
   ```js
   {
-    "message": "O campo \"strName\" é obrigatório"
+    "message": "O campo \"strMeal\" é obrigatório"
   }
   ```
 
   * Caso o campo não tenha pelo menos 3 caracteres retorne um código de status 400, com o seguinte corpo:
   ```js
   {
-    "message": "O campo \"strName\" deve ter pelo menos 3 caracteres"
+    "message": "O campo \"strMeal\" deve ter pelo menos 3 caracteres"
   }
   ```
 
