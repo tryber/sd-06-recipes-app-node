@@ -261,19 +261,22 @@ Faça as seguintes validações:
 
 ## Bônus
 
-### 6 - Faça um CRUD usando a API `The Cocktail DB` como referência criando uma nova coleção `drinks`. Use como referência o documento abaixo.
+### 6 - Crie o endpoing `GET /recipes/search`. 
+
+Este endpoint pode receber como **query string** os parâmetros `cat`, `area` ou `q`. Abaixo está um exemplo de como utilizar cada um dos parâmetros.
+
+* `?cat=Beef`, deve retornar todos as receitas onde o atributo `strCategory` seja igual a `Beef`.
+* `?area=Mexican`, deve retornar todos as receitas onde o atributo `strArea` seja igual a `Mexican`.
+* `?q=Big Mac`, deve retornar todos as receitas onde o atributo `strMeal` seja igual a `Big MAc`.
+
+### 7 - Faça um CRUD usando a API `The Cocktail DB` como referência criando uma nova coleção `drinks`. Use como referência o documento abaixo para cria a coleção. Aplique validações similares a coleção de receitas.
 
 ```js
 {
-      "idDrink": "11007",
-      "strDrink": "Margarita",
-      "strDrinkAlternate": null,
-      "strTags": "IBA,ContemporaryClassic",
-      "strVideo": null,
-      "strCategory": "Ordinary Drink",
-      "strIBA": "Contemporary Classics",
-      "strAlcoholic": "Alcoholic",
-      "strGlass": "Cocktail glass",
-      "strInstructions": "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
-    },
+  "idDrink": "11007",
+  "strDrink": "Margarita",
+  "strTags": "IBA,ContemporaryClassic",
+  "strCategory": "Ordinary Drink",
+  "strInstructions": "Rub the rim of the glass with the lime slice to make the salt stick toit. Take care to moisten only the outer rim and sprinkle the salt on it. The salt shouldpresent to the lips of the imbiber and never mix into the cocktail. Shake the otheringredients with ice, then carefully pour into the glass.",
+},
 ```
