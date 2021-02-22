@@ -4,13 +4,18 @@ const getAllRecipes = async () => {
   return await recipe.getAllRecipes();
 }
 
-// const createRecipes = async (name) => {
-//   const task = await recipe.createRecipes(name);
+const createRecipes = async (idMeal, strArea, strCategory, strInstructions) => {
+   const recipe = await recipe.createRecipes(idMeal, strArea, strCategory, strInstructions);
 
-//   return task;
-// };
+   return recipe;
+ };
+
+const findById = async (id) => {
+  return await recipe.findById(id);
+}
 
 module.exports = {
   getAllRecipes,
-  // createRecipes,
+  findById,
+  createRecipes,
 };
