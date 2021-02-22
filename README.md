@@ -12,7 +12,7 @@ Anteriormente, vocês fizeram uma aplicação frontend que consumia dados de uma
 
 ## Antes de começar
 
-Importe as coleções do banco de dados, usando os comandos abaixo
+Importe as coleções do banco de dados, usando os comandos abaixo.
 
 ```bash
 mongoimport --db mealDB --collection categories database/categories.json --drop
