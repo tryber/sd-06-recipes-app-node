@@ -261,7 +261,7 @@ Faça as seguintes validações:
 
 ## Bônus
 
-### 6 - Crie o endpoing `GET /recipes/search`. 
+### 6 - Crie o endpoint `GET /recipes/search`. 
 
 Este endpoint pode receber como **query string** os parâmetros `cat`, `area` ou `q`. Abaixo está um exemplo de como utilizar cada um dos parâmetros.
 
