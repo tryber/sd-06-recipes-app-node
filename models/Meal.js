@@ -9,7 +9,12 @@ const getById = async (id) => {
   return await connection().then((db) => db.collection('recipes').findOne(ObjectId(id)));
 };
 
+const postMeal = async (meal) => {
+  return await connection().then((db) => db.collection('recipes').insertOne({...meal}))
+};
+
 module.exports = {
   getAll,
   getById,
+  postMeal,
 };

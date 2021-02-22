@@ -16,4 +16,10 @@ MealController.get('/:id', async (req, res) => {
     });
 });
 
+MealController.post('/', async (req, res) => {
+  const meal = req.body;
+  await MealService.postMeal(meal)
+  res.status(201).end();
+})
+
 module.exports = MealController;
