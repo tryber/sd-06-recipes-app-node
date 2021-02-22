@@ -156,3 +156,124 @@ Faça as seguintes validações:
     }
     ```
 
+
+### 4 - Crie o endpoint `PUT /recipes/:id`
+
+* O endpoint deve ser capaz de editar uma receita baseado no id da rota, sem alterar o id registrado.
+
+* O corpo da requisição deverá ter o seguinte formato:
+
+```js
+{
+  "strName": "Spicy Arrabiata Penne",
+  "strCategory": "Vegetarian",
+  "strArea": "Italian",
+  "strInstructions": "Bring a large pot of water to a boil. Add kosher salt to the boilingwater, then add the pasta. Cook according to the package instructions, about 9 minutes\r\nIn a large skillet over medium-high heat, add the olive oil and heat until the oilstarts to shimmer. Add the garlic and cook, stirring, until fragrant, 1 to 2 minutes. Addthe chopped tomatoes, red chile flakes, Italian seasoning and salt and pepper to taste.Bring to a boil and cook for 5 minutes. Remove from the heat and add the chopped basil\r\nDrain the pasta and add it to the sauce. Garnish with Parmigiano-Reggiano flakes andmore basil and serve warm.",
+  "strTags": "Pasta,Curry"
+}
+```
+
+Faça as seguintes validações:
+
+* `strName` deve estar preenchido e deve ter no mínimo 3 caracteres.
+  * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
+  ```js
+  {
+    "message": "O campo \"strName\" é obrigatório"
+  }
+  ```
+
+  * Caso o campo não tenha pelo menos 3 caracteres retorne um código de status 400, com o seguinte corpo:
+  ```js
+  {
+    "message": "O campo \"strName\" deve ter pelo menos 3 caracteres"
+  }
+  ```
+
+* `strCategory` deve estar preenchido e deve ter no mínimo 3 caracteres.
+  * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strCategory\" é obrigatório"
+    }
+    ```
+
+
+  * Caso o campo não tenha pelo menos 3 caracteres retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo  \"strCategory\" deve ter pelo menos 3 caracteres"
+    }
+    ```
+
+* `strArea` deve estar preenchido e deve ter no mínimo 3 caracteres.
+  * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strArea\" é obrigatório"
+    }
+    ```
+
+  * Caso o campo não tenha pelo menos 3 caracteres retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strArea\" deve ter pelo menos 3 caracteres"
+    }
+    ```
+
+* `strInstructions` deve estar preenchido e deve ter no mínimo 10 palavras.
+  * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strInstruction\" é obrigatório"
+    }
+    ```
+
+  * Caso o campo não tenha pelo menos 10 palavras retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O \"strInstruction\" deve ter pelo menos 10 palavras"
+    }
+    ```
+
+* `strTags` deve estar preenchido e deve ter no mínimo 1 tag (considere que a cada vírgula presente no código é uma nova tag).
+  * Caso o campo não seja passado ou esteja vazio retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strTags\" é obrigatório"
+    }
+    ```
+
+  * Caso o campo não tenha pelo menos 1 valor retorne um código de status 400, com o seguinte corpo:
+    ```js
+    {
+      "message": "O campo \"strTags\" deve ter pelo menos 1 valor"
+    }
+    ```
+
+### 5 - Crie o endpoint `DELETE /recipes/:id`
+
+* O endpoint deve deletar um crush baseado no id da rota. Devendo retornar o status 200, com o seguinte corpo:
+
+```js
+{ "message": "Receita deletada com sucesso" }
+```
+
+## Bônus
+
+### 6 - Faça um CRUD usando a API `The Cocktail DB` como referência criando uma nova coleção `drinks`. Use como referência o documento abaixo.
+
+```js
+{
+      "idDrink": "11007",
+      "strDrink": "Margarita",
+      "strDrinkAlternate": null,
+      "strTags": "IBA,ContemporaryClassic",
+      "strVideo": null,
+      "strCategory": "Ordinary Drink",
+      "strIBA": "Contemporary Classics",
+      "strAlcoholic": "Alcoholic",
+      "strGlass": "Cocktail glass",
+      "strInstructions": "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
+    },
+```
