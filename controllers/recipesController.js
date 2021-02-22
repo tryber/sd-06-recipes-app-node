@@ -21,11 +21,11 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', validateFields, async (_req, res) => {
-
+router.post('/', validateFields, async (req, res) => {
+  const { body } = req;
   try {
-    // const recipe = await mongo.findById(id);
-    return res.status(200).send('validou!');
+    const newId = await mongo.create(body);
+    return res.status(200).send(newId);
   } catch(e) {
     res.status(404).send({ message: 'Receita não encontrada' });
   }

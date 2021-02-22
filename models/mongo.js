@@ -20,8 +20,19 @@ const findById = async (id) => {
   }
 };
 
+const create = async (recipe) => {
+  try {
+    const { insertedId } = await connection()
+      .then((db) => db.collection('recipes').insertOne(recipe));
+
+    return { id: insertedId };
+  } catch(e) {
+    throw new Error(e);
+  }
+};
 
 module.exports = {
   getAll,
-  findById
+  findById,
+  create
 };
