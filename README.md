@@ -4,7 +4,7 @@ Exercício em grupo para prática de Node, Express e Mongodb
 
 ## Sobre o exercício
 
-Anteriormente, vocês fizeram uma aplicação fronted que consumia dados de uma API externa do site https://www.themealdb.com/. Agora vocês vão criar uma cópia dessa API usando como ferramentas as tecnologias de backend que aprendemos até agora.
+Anteriormente, vocês fizeram uma aplicação frontend que consumia dados de uma API externa do site https://www.themealdb.com/. Agora vocês vão criar uma cópia dessa API usando como ferramentas as tecnologias de backend que aprendemos até agora.
 
 * Node.js
 * Express
