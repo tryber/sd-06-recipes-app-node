@@ -253,7 +253,7 @@ Faça as seguintes validações:
 
 ### 5 - Crie o endpoint `DELETE /recipes/:id`
 
-* O endpoint deve deletar um crush baseado no id da rota. Devendo retornar o status 200, com o seguinte corpo:
+* O endpoint deve deletar uma receita baseado no id da rota. Devendo retornar o status 200, com o seguinte corpo:
 
 ```js
 { "message": "Receita deletada com sucesso" }
