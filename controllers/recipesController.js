@@ -9,4 +9,16 @@ router.get('/', async (_req, res) => {
   res.status(200).send(recipes);
 });
 
+router.get('/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    const recipe = await mongo.findById(id);
+    res.status(200).send(recipe);
+  } catch(e) {
+    res.status(404).send({ message: 'Receita não encontrada' });
+  }
+});
+
+
+
 module.exports = router;
