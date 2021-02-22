@@ -17,8 +17,8 @@ app.get('/recipes', async (req, res) => {
 app.get('/recipes/:id', async (req, res) => {
   const { id } = req.params;
   const resposta = await connection()
-    .then((mealDb) => mealDb.collection('recipes').findOne(ObjectId(id)));
-  if (!id) return res.status(404).json({ message: 'Receita não encontrada' })
+    .then((mealDB) => mealDB.collection('recipes').findOne(ObjectId(id)));
+  if (!resposta) res.status(404).json({ message: 'Receita não encontrada' })
   res.status(200).json(resposta);
 })
 
