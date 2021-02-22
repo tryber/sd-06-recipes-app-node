@@ -42,4 +42,16 @@ router.put('/:id', validateFields, async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    await Recipe.remove(id);
+    return res.status(200).send({ message: 'Receita deletada com sucesso' });
+  } catch(e) {
+    return res.status(404).send({ message: 'Receita não encontrada' });
+  }
+});
+
+
 module.exports = router;
