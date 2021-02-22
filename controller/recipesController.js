@@ -1,10 +1,10 @@
 const { Router } = require('express');
-const { getAllRecipes } = require('../service');
+const { recipesService } = require('../service');
 
 const recipesController = new Router();
 
-recipesController.get('/recipes', async (req, res) => {
-  res.status(200).json(await getAllRecipes());
+recipesController.get('/', async (req, res) => {
+  res.status(200).json(await recipesService.getAllRecipes());
 });
 
 // recipesController.post('/', async (req, res) => {
