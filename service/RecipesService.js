@@ -8,10 +8,6 @@ const findById = async (id) => {
   return Recipes.findById(id);
 }
 
-const findByCharacter = async (cat, area, q) => {
-  return Recipes.findByString({ cat, area, q })
-}
-
 const createRecipe = async (strMeal, strCategory, strArea, strInstructions, strTags) => {
   return Recipes.createRecipe(strMeal, strCategory, strArea, strInstructions, strTags);
 }
@@ -27,7 +23,6 @@ const remove = async (id) => {
 module.exports = {
   getAll,
   findById,
-  findByCharacter,
   updateRecipe,
   createRecipe,
   remove

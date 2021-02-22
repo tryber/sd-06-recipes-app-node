@@ -9,10 +9,6 @@ const findById = async (id) => {
   return connection().then((db) => db.collection('recipes').findOne(ObjectId(id)))
 }
 
-const findByString = async (cat, area, q) => {
-  return connection().then((db) => db.collection('recipes').find({ cat, area, q }).toArray())
-}
-
 const createRecipe = async (strMeal, strCategory, strArea, strInstructions, strTags) => {
   return connection().then((db) => db.collection('recipes').insertOne({ strMeal, strCategory, strArea, strInstructions, strTags }))
 }
@@ -27,7 +23,6 @@ const remove = async (id) => {
 module.exports = {
   getAll,
   findById,
-  findByString,
   createRecipe,
   updateRecipe,
   remove
