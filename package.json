@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "name": "sd-06-recipes-app-node",
   "version": "1.0.0",
@@ -19,3 +20,6 @@
     "nodemon": "^2.0.7"
   }
 }
+=======
+{}
+>>>>>>> 6613b481f2f21bf4596a931b030aee8395f9b0af
