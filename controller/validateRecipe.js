@@ -3,8 +3,6 @@ const validateRecipe = (req, res, next) => {
 
   console.log(strMeal);
 
-  // console.log('teste');
-
   if (!strMeal) {
     return res.status(400).json({ message: 'O campo "strMeal" é obrigatório' });
   }

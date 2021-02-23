@@ -6,9 +6,7 @@ const getAllRecipes = async () =>
   connection().then((db) =>
     db
       .collection('recipes')
-      // .find({}, { projection: { _id: 0 } })
-      .find({}, {})
-
+      .find({}, { projection: { _id: 0 } })
       .toArray()
   );
 
